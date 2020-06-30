@@ -41,3 +41,4 @@ if loginBtn:
 	browser.find_element_by_id('loginPassword').send_keys(password)
 	browser.find_element_by_id('loginAction').click()
 	browser.find_element_by_class_name('m-send-btn').click();
+browser.close()
