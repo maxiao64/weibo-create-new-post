@@ -16,7 +16,7 @@ cp config/user.config.example config/user.config
 
 修改config/user.config内的参数
 
-## 启动爬虫
+## 启动脚本
 
 ```shell script
 python index.py
