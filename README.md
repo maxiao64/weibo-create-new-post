@@ -19,5 +19,5 @@ cp config/user.config.example config/user.config
 ## 启动爬虫
 
 ```shell script
-python3 index.py
+python index.py
 ```
