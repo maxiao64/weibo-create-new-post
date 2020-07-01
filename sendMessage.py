@@ -7,8 +7,18 @@ from selenium.webdriver.common.keys import Keys
 from configparser import ConfigParser
 from time import sleep
 import message
+import logging
+import os
 
-
+realPath = os.path.split(os.path.realpath(__file__))[0]
+logging.basicConfig(level=logging.INFO,#控制台打印的日志级别
+                    filename=realPath + '/send-love.log',
+                    filemode='a',##模式，有w和a，w就是写模式，每次都会重新写日志，覆盖之前的日志
+                    #a是追加模式，默认如果不写的话，就是追加模式
+                    format=
+                    '%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'
+                    #日志格式
+                    )
 
 # 读取配置
 cp = ConfigParser()
@@ -25,7 +35,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 # # 启动浏览器，获取网页源代码
 browser = webdriver.Chrome(chrome_options=chrome_options)
-browser = webdriver.Chrome()
+# browser = webdriver.Chrome()
 mainUrl = 'https://m.weibo.cn/u/'+user_id
 browser.get(mainUrl)
 browser.implicitly_wait(10)
@@ -46,6 +56,7 @@ chatBtn.click()
 browser.find_element_by_xpath('/html/body/div/article/div[2]/div[1]/textarea').send_keys(msg)
 sleep(3)
 browser.find_element_by_xpath('/html/body/div/article/div[2]/section/div[2]/button').click()
+logging.info('love msg:'+msg)
 sleep(3)
 browser.close()
 
