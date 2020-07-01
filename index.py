@@ -10,7 +10,7 @@ import time
 import message
 import os
 
-msg = message.getMsg()
+msg = message.getMsg('message.txt')
 
 # 读取配置
 cp = ConfigParser()

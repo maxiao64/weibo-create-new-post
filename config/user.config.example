@@ -1,3 +1,6 @@
 [user]
 phoneNumber=username
 password=password
+[following]
+user_id=5259606940
+nickname=马同学
