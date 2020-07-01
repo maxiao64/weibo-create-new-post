@@ -8,12 +8,14 @@ from selenium.webdriver.common.keys import Keys
 from configparser import ConfigParser
 import time
 import message
+import os
 
 msg = message.getMsg()
 
 # 读取配置
 cp = ConfigParser()
-cp.read('config/user.config')
+realPath = os.path.split(os.path.realpath(__file__))[0]
+cp.read(realPath+'/config/user.config')
 phoneNumber = cp.get('user','phoneNumber')
 password = cp.get('user','password')
 
