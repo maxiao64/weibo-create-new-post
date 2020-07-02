@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO,#控制台打印的日志级别
 
 # 读取配置
 cp = ConfigParser()
-cp.read('config/user.config')
+cp.read(realPath+'/config/user.config')
 phoneNumber = cp.get('user','phoneNumber')
 password = cp.get('user','password')
 user_id = cp.get('following','user_id')
