@@ -27,7 +27,7 @@ phoneNumber = cp.get('user','phoneNumber')
 password = cp.get('user','password')
 user_id = cp.get('following','user_id')
 nickname = cp.get('following','nickname')
-msg = nickname + ',' + message.getMsg('love.txt')
+msg = nickname + ',' + message.getRandomMsg('love.txt')
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox')
