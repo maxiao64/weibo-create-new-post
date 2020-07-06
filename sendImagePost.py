@@ -34,13 +34,13 @@ cp.read(realPath+'/config/user.config')
 phoneNumber = cp.get('user','phoneNumber')
 password = cp.get('user','password')
 
-# chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_argument('--no-sandbox')
-# chrome_options.add_argument('--headless')
-# chrome_options.add_argument('--disable-gpu')
-# # # 启动浏览器，获取网页源代码
-# browser = webdriver.Chrome(chrome_options=chrome_options)
-browser = webdriver.Chrome()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+# # 启动浏览器，获取网页源代码
+browser = webdriver.Chrome(chrome_options=chrome_options)
+# browser = webdriver.Chrome()
 mainUrl = 'https://m.weibo.cn'
 browser.get(mainUrl)
 browser.implicitly_wait(10)
